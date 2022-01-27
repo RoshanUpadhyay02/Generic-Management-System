@@ -1,0 +1,802 @@
+WindowManager:
+    MainWindow:
+    FirstWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    SixthWindow:
+    SeventhWindow:
+    EighthWindow:
+    NinthWindow:
+    TenthWindow:
+    MWindow:
+    LastWindow:
+    TwelfthWindow:
+    ThirteenthWindow:
+
+<MainWindow>:
+    name: "title"
+
+    FloatLayout:
+        Video:
+            source:"Logo.mp4"
+            state:"play"
+            options: {'eos': 'loop'}
+        Button:
+            text: "Next"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_normal: 'next.png'
+            background_down: 'next.png'
+            pos_hint: {"x":0.47, "y":0.15}
+            on_release:
+                app.root.current = "m"
+                root.manager.transition.direction = "left"
+
+
+<FirstWindow>:
+    name: "first"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Button:
+            text: "USER"
+            font_size: 40
+            size_hint: 0.45, 0.3
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.30, "y":0.17}
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"STAFF"
+            font_size: 40
+            size_hint: 0.45, 0.3
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.30, "y":0.51}
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "m"
+                root.manager.transition.direction = "right"
+        
+
+<SecondWindow>:
+    name: "second"
+
+    FloatLayout:
+        font_size: 30
+        passwd:pid
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Enter the password:"
+            font_size: 20
+            pos_hint: {"x":0.27, "y":0.53}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: pid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05   
+        Button:
+            text: "LOGIN"
+            font_size: 30
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.80, "y":0.53}
+            size_hint: 0.15, 0.1
+            on_release:
+                app.root.current = "third" if pid.text == "341267" else root.check()
+                pid.text = ""
+                root.manager.transition.direction = "left"
+        Label:
+            id: loc
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.30}
+            size_hint: 0.15, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.25}
+            size_hint: 0.15, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+<ThirdWindow>:
+    name: "third"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Button:
+            text: "STATUS"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.10}
+            on_release:
+                app.root.current = "thirteenth"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"Delete"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.40}
+            on_release:
+                app.root.current = "twelfth"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"ADD"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.70}
+            on_release:
+                app.root.current = "tenth"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+<FourthWindow>
+    name: "fourth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Button:
+            text: "Return"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.10}
+            on_release:
+                app.root.current = "seventh"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"ISSUE"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.40}
+            on_release:
+                app.root.current = "sixth"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"LOCATION"
+            font_size: 30
+            size_hint: 0.35, 0.2
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.40, "y":0.70}
+            on_release:
+                app.root.current = "fifth"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+
+<FifthWindow>
+    name: "fifth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Name of Book :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.53}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: book_name
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05
+            
+        Button:
+            text: "Search"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.80, "y":0.55}
+            on_release: root.search()
+
+        Label:
+            text: "Location of Book :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.45}
+            size_hint: 0.12, 0.1
+
+        Label:
+            id: loc
+            text: "LOCATION"
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.45}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.35}
+            size_hint: .12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "fourth"
+                book_name.text = ""
+                loc.text = "LOCATION"
+                grt.text = ""
+                root.manager.transition.direction = "right"
+
+<SixthWindow>
+    name: "sixth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Enter the Book id :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.73}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: bid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.75}
+            size_hint: 0.3, 0.05
+        Label:
+            text: "Enter Your Name :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.62}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: cid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.65}
+            size_hint: 0.3, 0.05
+        
+        Label:
+            text: "Phone Number :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.52}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: mid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05
+
+        Button:
+            text: "ISSUE"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.30}
+            on_release: 
+                app.root.current = "eighth" if cid.text != '' and bid.text != '' and mid.text != '' else root.check2()
+                bid.text = ""
+                cid.text = ""
+                mid.text = ""
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Save"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.42}
+            on_release: root.check1()
+        
+        Label:
+            id: loc
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.20}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.15}
+            size_hint: .12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "right"
+
+<SeventhWindow>
+    name: "seventh"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Enter the Book id :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.73}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: bid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.75}
+            size_hint: 0.3, 0.05
+        Label:
+            text: "Enter Your Name :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.62}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: cid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.65}
+            size_hint: 0.3, 0.05
+        
+        Label:
+            text: "Phone Number :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.52}
+            size_hint: 0.12, 0.1
+        TextInput:
+            id: mid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05
+
+        Button:
+            text: "Return"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.30}
+            on_release: 
+                app.root.current = "ninth" if cid.text != '' and bid.text != '' and mid.text != '' else root.check2()
+                bid.text = ""
+                cid.text = ""
+                mid.text = ""
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Save"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.42}
+            on_release: root.check1()
+        
+        Label:
+            id: loc
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.20}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.15}
+            size_hint: .12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "right"
+
+<EighthWindow>
+    name: "eighth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Book Issued"
+            font_size: 80
+            pos_hint: {"x":0.50, "y":0.50}
+            size_hint: 0.12, 0.1
+        Label:
+            text: "Thank You!"
+            font_size: 35
+            pos_hint: {"x":0.5, "y":0.30}
+            size_hint: 0.12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "right"
+
+<NinthWindow>
+    name: "ninth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Book Returned"
+            font_size: 80
+            pos_hint: {"x":0.50, "y":0.50}
+            size_hint: 0.12, 0.1
+        Label:
+            text: "Thank You!"
+            font_size: 35
+            pos_hint: {"x":0.50, "y":0.30}
+            size_hint: 0.12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "right"
+
+<TenthWindow>
+    name: "tenth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+    
+        Label:
+            text: "Enter the Book id :"
+            font_size: 15
+            pos_hint: {"x":0.35, "y":0.73}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: bid
+            font_size: 15
+            pos_hint: {"x":0.55, "y":0.76}
+            size_hint: 0.3, 0.05
+
+        Label:
+            text: "Name of the Book:"
+            font_size: 15
+            pos_hint: {"x":0.35, "y":0.63}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: bn
+            font_size: 15
+            pos_hint: {"x":0.55, "y":0.66}
+            size_hint: 0.3, 0.05
+
+        Label:
+            text: "Author of the Book:"
+            font_size: 15
+            pos_hint: {"x":0.35, "y":0.53}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: an
+            font_size: 15
+            pos_hint: {"x":0.55, "y":0.56}
+            size_hint: 0.3, 0.05
+
+        Label:
+            text: "Position of the Book:"
+            font_size: 15
+            pos_hint: {"x":0.35, "y":0.43}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: ps
+            pos_hint: {"x":0.55, "y":0.46}
+            size_hint: 0.3, 0.05
+
+        Button:
+            text: "Add to Library"
+            font_size: 15
+            size_hint: 0.15, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.30}
+            on_release: 
+                root.check()
+                bid.text = ""
+                bn.text = ""
+                an.text = ""
+                ps.text = ""
+        Label:
+            id: loc
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.20}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.15}
+            size_hint: .12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "third"
+                root.manager.transition.direction = "right"
+
+<MWindow>:
+    name: "m"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Button:
+            text: "STORE"
+            font_size: 40
+            size_hint: 0.45, 0.3
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.30, "y":0.17}
+            on_release:
+                app.root.current = "last"
+                root.manager.transition.direction = "left"
+        Button:
+            text:"LIBRARY"
+            font_size: 40
+            size_hint: 0.45, 0.3
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.30, "y":0.51}
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "title"
+                root.manager.transition.direction = "right"
+
+<LastWindow>
+    name: "last"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+    
+        Label:
+            id: List
+            text: "Work In Progress....."
+            font_size: 40
+            pos_hint: {"x":0.45, "y":0.50}
+            size_hint: 0.12, 0.1
+                
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "m"
+                root.manager.transition.direction = "right"
+
+<TwelfthWindow>:
+    name: "twelfth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Book Name :"
+            font_size: 20
+            pos_hint: {"x":0.30, "y":0.53}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: bid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05
+        Button:
+            text: "Delete"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.50, "y":0.42}
+            on_release: 
+                root.check()
+                bid.text  = ""
+        Label:
+            id: loc
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.30}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.25}
+            size_hint: .12, 0.1
+            
+        Button:
+            id: back
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "third"
+                root.manager.transition.direction = "right"
+
+<ThirteenthWindow>
+    name: "thirteenth"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source:'background_image.jpg'
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Book Id :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.53}
+            size_hint: 0.12, 0.1
+
+        TextInput:
+            id: bid
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.55}
+            size_hint: 0.3, 0.05
+            
+        Button:
+            text: "Search"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.80, "y":0.55}
+            on_release: root.search()
+
+        Label:
+            text: "Status :"
+            font_size: 15
+            pos_hint: {"x":0.30, "y":0.45}
+            size_hint: 0.12, 0.1
+
+        Label:
+            id: loc
+            text: "SEARCH"
+            font_size: 15
+            pos_hint: {"x":0.50, "y":0.45}
+            size_hint: 0.12, 0.1
+        Label:
+            id: grt
+            text: ""
+            font_size: 15
+            pos_hint: {"x":0.45, "y":0.35}
+            size_hint: .12, 0.1
+        Button:
+            text: "Go Back"
+            font_size: 15
+            size_hint: 0.10, 0.1
+            background_color: 0, 128, 0, 0.5
+            pos_hint: {"x":0.10, "y":0.11}
+            on_release:
+                app.root.current = "third"
+                bid.text = ""
+                loc.text = "SEARCH"
+                grt.text = ""
+                root.manager.transition.direction = "right"

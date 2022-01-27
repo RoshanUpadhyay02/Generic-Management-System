@@ -1,0 +1,11 @@
+The software mentioned should be installed in the device to run this program:
+1. Python
+2. Pandas
+3. Kivy
+
+Python can be downloaded from this link: https://www.python.org/downloads/
+
+Pandas can be installed by using the following command: pip install pandas
+
+Kivy can be installed by using the following command: pip install kivy
+
