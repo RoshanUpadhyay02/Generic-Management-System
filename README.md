@@ -59,9 +59,3 @@ Ashfaque Ahmed, Software Project Management: A Process-driven approach, Boca Rat
 SRM LIBRARY MANAGEMENT SYSTEM
 
 https://www.geeksforgeeks.org/
- 
-
-
-
-# Team Members
-![team](https://user-images.githubusercontent.com/90834830/151357612-56f52c12-8698-4467-80bc-b93a68979202.jpeg)
